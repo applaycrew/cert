@@ -263,24 +263,35 @@
             margin: 0;
             color: #232f3e;
         }
+        
+        /* 통계/범례 영역 정렬 문제 해결을 위해 grid 레이아웃 사용 */
         .review-legend {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* 모바일 대응: 무조건 2열 배치 */
+            gap: 15px 10px; /* 위아래 15px, 양옆 10px 간격 */
             margin-bottom: 20px;
             font-size: 0.95em;
             color: #333;
             font-weight: bold;
             background-color: #f8f9fa;
-            padding: 12px 15px;
+            padding: 15px;
             border-radius: 5px;
             border: 1px solid #e9ecef;
             align-items: center;
         }
+        /* PC 환경 등 화면이 넓을 때 4열로 한 줄에 표시하고 싶다면 아래 미디어 쿼리 활성화 */
+        @media (min-width: 500px) {
+            .review-legend {
+                grid-template-columns: repeat(4, auto);
+                justify-content: center;
+            }
+        }
+        
         .legend-item {
             display: flex;
             align-items: center;
             gap: 6px;
+            white-space: nowrap; /* 글씨 줄바꿈 방지 */
         }
         .legend-box {
             width: 16px;
@@ -294,17 +305,16 @@
         
         .review-grid {
             display: grid;
-            /* 60px에서 42px로 약 70% 축소 */
             grid-template-columns: repeat(auto-fill, minmax(42px, 1fr));
-            gap: 7px; /* 10px에서 7px로 축소 */
+            gap: 7px;
             max-height: 450px;
             overflow-y: auto;
             padding-top: 2px;
             padding-right: 5px;
         }
         .review-item {
-            padding: 7px 3px; /* 10px 5px에서 약 70%로 축소 */
-            font-size: 0.85em; /* 폰트 크기 축소 */
+            padding: 7px 3px;
+            font-size: 0.85em;
             text-align: center;
             border-radius: 4px;
             cursor: pointer;
