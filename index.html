@@ -279,7 +279,7 @@
             border: 1px solid #e9ecef;
             align-items: center;
         }
-        /* PC 환경 등 화면이 넓을 때 4열로 한 줄에 표시하고 싶다면 아래 미디어 쿼리 활성화 */
+        /* PC 환경 등 화면이 넓을 때 4열로 한 줄에 표시 */
         @media (min-width: 500px) {
             .review-legend {
                 grid-template-columns: repeat(4, auto);
@@ -392,12 +392,23 @@
         <button class="quiz-btn" onclick="hideReviewPage()">돌아가기 ↩</button>
     </div>
     
-    <!-- 숫자와 색상이 통합된 범례 영역 -->
+    <!-- 숫자와 글자가 하나의 요소 안에 위치하여 높이(baseline) 정렬이 완벽하게 맞도록 수정된 범례 영역 -->
     <div class="review-legend">
-        <div class="legend-item">총 문항수: <span id="stat-total" style="margin-left:2px; color:#007bff;">0</span></div>
-        <div class="legend-item"><div class="legend-box legend-correct"></div> 정답: <span id="stat-correct" style="margin-left:2px; color:#155724;">0</span></div>
-        <div class="legend-item"><div class="legend-box legend-incorrect"></div> 오답: <span id="stat-incorrect" style="margin-left:2px; color:#721c24;">0</span></div>
-        <div class="legend-item"><div class="legend-box legend-unsolved"></div> 미풀이: <span id="stat-unsolved" style="margin-left:2px; color:#555;">0</span></div>
+        <div class="legend-item">
+            <span>총 문항수: <span id="stat-total" style="color:#007bff; margin-left: 2px;">0</span></span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-box legend-correct"></div> 
+            <span>정답: <span id="stat-correct" style="color:#155724; margin-left: 2px;">0</span></span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-box legend-incorrect"></div> 
+            <span>오답: <span id="stat-incorrect" style="color:#721c24; margin-left: 2px;">0</span></span>
+        </div>
+        <div class="legend-item">
+            <div class="legend-box legend-unsolved"></div> 
+            <span>미풀이: <span id="stat-unsolved" style="color:#555; margin-left: 2px;">0</span></span>
+        </div>
     </div>
 
     <div class="review-grid" id="review-grid">
