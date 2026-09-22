@@ -307,7 +307,9 @@
     <h1>AWS Certified AI Practitioner</h1>
     <div class="subtitle">
         Exam: AIF-C01-KR (Korean Version)<br>
+        Number of questions: <span id="start-total-q"></span><br>
         Vendor: Amazon<br>
+        <!-- 개발자가 직접 날짜를 수정할 수 있도록 하드코딩 처리 -->
         Date: 09/2026
     </div>
     <button class="start-btn" onclick="startQuiz()">Start 🚀</button>
@@ -343,7 +345,7 @@
         <div class="explanation" id="feedback-explanation"></div>
     </div>
 
-    <!-- 하단 컨트롤 (결과 페이지 버튼은 왼쪽, 정답 확인은 오른쪽) -->
+    <!-- 하단 컨트롤 -->
     <div class="bottom-controls">
         <button class="review-btn" onclick="showReviewPage()">📊 문제 풀이 결과</button>
         <div id="submit-btn-wrapper">
@@ -5491,6 +5493,9 @@
         // ... (나머지 전체 문제 데이터) ...
     ];
 
+    // 시작 페이지에 총 문항 수 동적 표시
+    document.getElementById('start-total-q').innerText = questions.length;
+
     let currentQuestionIndex = 0;
 
     // 시작 버튼 클릭 시 호출
@@ -5695,7 +5700,7 @@
             reviewGrid.appendChild(item);
         });
 
-        // 통계 텍스트 업데이트 (범례 영역에 통합)
+        // 통계 텍스트 업데이트
         const totalCount = questions.length;
         document.getElementById('stat-total').innerText = totalCount;
         document.getElementById('stat-correct').innerText = correctCount;
