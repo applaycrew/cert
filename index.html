@@ -706,13 +706,13 @@
             id: 24,
             question: "복잡한 작업을 더 작은 하위 작업으로 나누어 순차적으로 대규모 언어 모델(LLM)로 전송하는 기술은 무엇입니까?",
             options: [
-                { id: "A", text: "원샷 프롬프팅" },
-                { id: "B", text: "프롬프트 체이닝" },
-                { id: "C", text: "생각의 나무" },
-                { id: "D", text: "검색 증강 생성(RAG)" }
+                { id: "A", text: "원샷 프롬프팅 (One-Shot Prompting)" },
+                { id: "B", text: "프롬프트 체이닝 (Prompt Chaining)" },
+                { id: "C", text: "생각의 나무 (Tree of Thoughts, ToT)" },
+                { id: "D", text: "검색 증강 생성 (RAG)" }
             ],
-            answer: "C",
-            explanation: "원본 문항에서 일부 텍스트가 누락되었으나 정답은 '생각의 나무(Tree of Thoughts)'로 명시되어 있습니다. 이는 언어 모델이 문제 해결을 위해 다양한 추론 경로를 트리의 가지처럼 탐색하게 하는 고급 기법입니다."
+            answer: "B",
+            explanation: "- 원샷 프롬프팅(One-Shot Prompting): 인공지능에게 단 하나의 예시를 제공하여 원하는 답변의 형식이나 패턴을 학습시키고 작업을 수행하게 하는 프롬프트 엔지니어링 기법입니다.<br>- 프롬프트 체이닝(Prompt Chaining): 하나의 복잡한 작업을 여러 개의 작은 단계(Sub-task)로 나누고, 이전 단계의 출력(Output)을 다음 단계의 입력(Input)으로 순차적으로 연결하여 처리하는 기법입니다.<br>- 생각의 나무(Tree of Thoughts, ToT): 기존의 단선적인 사고 과정인 '생각의 사슬(Chain-of-Thought, CoT)'을 확장하여, 나무의 가지처럼 여러 갈래의 잠재적 솔루션을 동시에 탐색하는 프레임워크입니다."
         },
         {
             id: 25,
