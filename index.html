@@ -222,6 +222,12 @@
         #submit-btn:hover {
             background-color: #218838;
         }
+        #bottom-next-btn {
+            background-color: #007bff;
+        }
+        #bottom-next-btn:hover {
+            background-color: #0056b3;
+        }
 
         .feedback {
             margin-top: 20px;
@@ -381,6 +387,7 @@
         <button class="review-btn" onclick="showReviewPage()">📊 문제 풀이 결과</button>
         <div id="submit-btn-wrapper">
             <button class="quiz-btn" id="submit-btn" onclick="checkAnswer()">정답 확인 ✔</button>
+            <button class="quiz-btn" id="bottom-next-btn" onclick="nextQuestion()" style="display: none;">다음 문제 ▶</button>
         </div>
     </div>
 </div>
@@ -389,7 +396,7 @@
 <div class="container" id="review-page">
     <div class="review-header">
         <h2>문제 풀이 결과</h2>
-        <button class="quiz-btn" onclick="hideReviewPage()">돌아가기</button>
+        <button class="quiz-btn" onclick="hideReviewPage()">돌아가기 ↩</button>
     </div>
     
     <!-- 숫자와 글자가 하나의 요소 안에 위치하여 높이(baseline) 정렬이 완벽하게 맞도록 수정된 범례 영역 -->
@@ -5578,6 +5585,7 @@
         });
 
         const submitBtn = document.getElementById('submit-btn');
+        const bottomNextBtn = document.getElementById('bottom-next-btn');
         const feedbackContainer = document.getElementById('feedback-container');
         const feedbackTitle = document.getElementById('feedback-title');
         const feedbackExplanation = document.getElementById('feedback-explanation');
@@ -5594,6 +5602,14 @@
             });
 
             submitBtn.style.display = 'none';
+            
+            // 마지막 문제가 아닐 때만 다음 문제 버튼 표시
+            if (currentQuestionIndex < questions.length - 1) {
+                bottomNextBtn.style.display = 'block';
+            } else {
+                bottomNextBtn.style.display = 'none';
+            }
+            
             feedbackContainer.style.display = 'block';
 
             let correctAnswerText = isMultiple ? [...q.answer].sort().join(", ") : q.answer;
@@ -5608,6 +5624,7 @@
             }
         } else {
             submitBtn.style.display = 'block';
+            bottomNextBtn.style.display = 'none';
             feedbackContainer.style.display = 'none';
         }
 
@@ -5668,7 +5685,11 @@
             feedbackTitle.innerText = '오답입니다. ❌';
         }
         
+        // 정답 확인 버튼 숨기고 다음 문제 버튼 표시 (마지막 문제 제외)
         document.getElementById('submit-btn').style.display = 'none';
+        if (currentQuestionIndex < questions.length - 1) {
+            document.getElementById('bottom-next-btn').style.display = 'block';
+        }
     }
 
     function nextQuestion() {
