@@ -1819,7 +1819,7 @@
                 { id: "D", text: "제곱평균오차(RMSE)" }
             ],
             answer: "C",
-            explanation: "Amazon Bedrock에서 요약(Summarization) 작업에 LLM 심사위원(LLM-as-a-judge)을 사용할 때, 생성된 요약이 원본 소스 정보에 기반하는지(환각이 없는지)를 평가하는 유효한 내장 평가 지표는 '충실함(Faithfulness)'입니다."
+            explanation: "Amazon Bedrock의 모델 평가(Model Evaluation) 기능 중 'LLM을 평가자(LLM-as-a-judge)로 사용하는 자동 평가'에서 제공하는 기본 내장 지표에는 정확성(Correctness), 도움됨(Helpfulness), 관련성(Relevance), 일관성(Coherence), 유해성(Harmfulness)과 더불어 충실함(Faithfulness)이 포함되어 있습니다. 특히 문서 요약(Summarization) 작업에서는 모델이 원본 문서에 없는 내용을 지어내는 '환각(Hallucination)' 현상을 방지하는 것이 매우 중요합니다. <b>'충실함(Faithfulness)'</b> 지표는 생성된 요약 내용이 원본 컨텍스트나 프롬프트에 제공된 정보만을 온전히 바탕으로 하고 있는지를 자동으로 평가해 주므로 이 사용 사례에 가장 적합한 내장 지표입니다."
         },
         {
             id: 117,
@@ -1850,9 +1850,9 @@
             question: "한 회사가 AWS 서비스를 사용하여 AI/ML 모델을 배포하고 있습니다. 이 회사는 모델의 의사 결정 프로세스에 대한 투명성을 확보하고 모델 결과에 대한 설명을 제공하고자 합니다. 적절한 솔루션은 무엇입니까?",
             options: [
                 { id: "A", text: "Amazon SageMaker 모델 카드 (Model Cards)" },
-                { id: "B", text: "아마존 레코그니션" },
-                { id: "C", text: "아마존 컴프리헨드" },
-                { id: "D", text: "아마존 렉스" }
+                { id: "B", text: "아마존 레코그니션 (Amazon Rekognition)" },
+                { id: "C", text: "아마존 컴프리헨드 (Amazon Comprehend)" },
+                { id: "D", text: "아마존 렉스 (Amazon Lex)" }
             ],
             answer: "A",
             explanation: "Amazon SageMaker 모델 카드(Model Cards)는 모델의 성능, 의도된 사용 사례, 위험 요소 및 의사 결정 세부 정보를 구조적으로 문서화하여 이해관계자에게 모델 투명성을 제공하고 설명 가능성을 지원합니다."
@@ -1891,19 +1891,19 @@
                 { id: "D", text: "아마존 개인화" }
             ],
             answer: "C",
-            explanation: "Amazon Kendra는 머신러닝을 사용하여 문서, 매뉴얼, 교육 자료 등 기업 내의 방대하고 구조화되지 않은 데이터 저장소에서 빠르고 정확하게 정보를 검색할 수 있게 해주는 지능형 엔터프라이즈 검색 서비스입니다."
+            explanation: "- Amazon Kendra는 기계 학습(ML)을 기반으로 하는 지능형 엔터프라이즈 검색 서비스입니다. 방대한 양의 문서, 매뉴얼, 교육 자료 등이 여러 데이터 소스에 분산되어 있을 때, 사용자가 자연어로 질문하면 단순한 키워드 매칭을 넘어 문맥을 이해하고 가장 정확한 답변이나 문서를 찾아줍니다. 온라인 학습 회사가 보유한 방대한 교육 자료에서 빠르고 정확하게 필요한 정보를 검색하는 데 가장 적합한 서비스입니다.<br><br>- 아마존 컴프리헨드(Amazon Comprehend): 텍스트에서 긍정/부정 감정, 핵심 문구, 엔티티(사람, 장소 등)를 추출하는 자연어 처리(NLP) 서비스로, 엔터프라이즈 검색 엔진은 아닙니다.<br><br>- 아마존 텍스트랙트(Amazon Textract): 스캔한 문서나 이미지에서 텍스트, 필기, 표 데이터 등을 자동으로 추출해 주는 광학 문자 인식(OCR) 서비스입니다.<br><br>- 아마존 개인화(Amazon Personalize): 사용자의 행동 데이터를 바탕으로 맞춤형 상품 추천이나 콘텐츠 추천 시스템을 구축하는 기계 학습 서비스입니다. 검색 기능이 주 목적이 아닙니다."
         },
         {
             id: 123,
             question: "한 금융 회사가 ML 예측에 대한 인적 검토를 위한 워크플로를 구축하고자 합니다. 회사는 사용 사례에 대한 신뢰도 임계값을 정의하고 시간 경과에 따라 임계값을 조정하고자 합니다. 어떤 AWS 서비스가 이러한 요구 사항을 충족합니까?",
             options: [
-                { id: "A", text: "아마존 개인화" },
-                { id: "B", text: "Amazon 증강 AI (Amazon A2I)" },
-                { id: "C", text: "아마존 인스펙터" },
-                { id: "D", text: "AWS 감사 관리자" }
+                { id: "A", text: "Amazon Personalize" },
+                { id: "B", text: "Amazon Augmented AI (Amazon A2I)" },
+                { id: "C", text: "Amazon Inspector" },
+                { id: "D", text: "AWS Audit Manager" }
             ],
             answer: "B",
-            explanation: "Amazon Augmented AI(A2I)는 머신러닝 시스템의 예측 결과가 사전에 설정한 신뢰도 임계값에 미치지 못할 때 사람이 직접 결과를 검토하도록 하는 인적 검토 워크플로(Human-in-the-loop)를 쉽게 구축하게 해주는 서비스입니다."
+            explanation: "- Amazon Augmented(보강된) AI(Amazon A2I)는 기계 학습(ML) 시스템에 인적 검토(Human-in-the-loop)를 쉽게 구축할 수 있도록 해주는 서비스입니다. ML 모델이 내린 예측의 신뢰도가 낮을 때(예: 신뢰도 점수가 80% 미만일 때)만 해당 데이터를 사람(검토자)에게 전달하여 수동으로 검토하도록 신뢰도 임계값(Confidence Threshold)을 설정할 수 있습니다. 또한 비즈니스 요구 사항이나 모델의 성능 변화에 따라 이 임계값을 유연하게 조정할 수 있으므로 문제의 요구 사항을 정확히 충족합니다.<br><br>- 아마존 개인화(Amazon Personalize): 실시간 맞춤형 추천 시스템을 구축하기 위한 서비스로, 인적 검토 워크플로와는 무관합니다.<br><br>- 아마존 인스펙터(Amazon Inspector): 소프트웨어 취약점 및 의도하지 않은 네트워크 노출을 지속적으로 스캔하는 자동화된 보안 취약점 관리 서비스입니다.<br><br>- AWS 감사 관리자(AWS Audit Manager): AWS 사용 환경을 지속적으로 감사하여 규정 준수 및 보안 위험을 평가하도록 돕는 서비스입니다. 기계 학습 예측 검토와는 관련이 없습니다."
         },
         {
             id: 124,
@@ -1915,7 +1915,7 @@
                 { id: "D", text: "사용자 의도와 올바른 챗봇 응답의 쌍" }
             ],
             answer: "C",
-            explanation: "의도 감지(Intent detection)를 위한 퓨샷 학습(few-shot learning)에서는 모델이 사용자의 입력 발화에서 올바른 의도를 추출하는 규칙을 배울 수 있도록, 실제 '사용자 메시지'와 그에 해당하는 '올바른 사용자 의도'가 짝지어진 여러 개의 모범 예시 쌍을 제공해야 합니다."
+            explanation: "퓨샷 러닝은 대규모 언어 모델(LLM)에게 프롬프트 상에서 몇 가지 '입력'과 '출력'의 예시를 미리 보여주어 모델이 수행해야 할 작업을 더 잘 이해하도록 유도하는 기법입니다.<br><br><b>'의도 감지(Intent Detection)'</b>의 목표는 사용자가 입력한 문장이 어떤 목적을 가지고 있는지 분류하는 것입니다. 따라서 모델에게 예시로 제공해야 하는 데이터는 입력(사용자의 메시지)과 출력(그에 해당하는 올바른 의도)의 쌍이어야 합니다.<br><br>예시: '내일 서울 날씨 어때?' (사용자 메시지) -> '날씨 확인' (사용자 의도)<br><br>- 챗봇 응답과 올바른 사용자 의도의 쌍: 의도 감지는 '사용자 입력'을 분석하는 것이지 챗봇의 응답을 분석하는 것이 아닙니다.<br><br>- 사용자 메시지와 올바른 챗봇 응답의 쌍: 이는 의도 감지가 아니라 챗봇이 최종적으로 '어떤 대답을 생성해야 하는지(응답 생성)'를 학습시킬 때 필요한 예시입니다.<br><br>- 사용자 의도와 올바른 챗봇 응답의 쌍: 이미 파악된 의도를 바탕으로 어떤 대답을 출력할지 매핑하는 것으로, 의도를 '감지'하는 단계에서 필요한 데이터가 아닙니다."
         },
         {
             id: 125,
@@ -1933,10 +1933,10 @@
             id: 126,
             question: "한 회사가 파운데이션 모델(FM)을 사용하여 일상적인 작업을 자동화하고 있습니다. AI 전문가가 작업과 관련된 컨텍스트를 포함하는 시스템 명령어를 생성하고 있습니다. 이 AI 전문가는 Amazon Bedrock 환경에서 FM과의 일상적인 상호 작용 시 이러한 명령어를 저장하고 재사용하고자 합니다. 이러한 요구 사항을 충족하는 Amazon Bedrock 솔루션은 무엇일까요?",
             options: [
-                { id: "A", text: "지식 기반" },
-                { id: "B", text: "가드레일" },
-                { id: "C", text: "놀이터" },
-                { id: "D", text: "프롬프트 관리" }
+                { id: "A", text: "지식 기반 (Knowledge Bases)" },
+                { id: "B", text: "가드레일 (Guardrails)" },
+                { id: "C", text: "놀이터 (Playgrounds)" },
+                { id: "D", text: "프롬프트 관리 (Prompt Management)" }
             ],
             answer: "D",
             explanation: "Amazon Bedrock의 프롬프트 관리(Prompt management) 기능은 시스템 지침과 컨텍스트가 포함된 프롬프트를 일관되게 생성, 버전 관리, 저장 및 재사용할 수 있도록 지원하여 런타임 반복성을 보장합니다."
@@ -1959,11 +1959,11 @@
             options: [
                 { id: "A", text: "Amazon SageMaker JumpStart" },
                 { id: "B", text: "Amazon SageMaker HyperPod" },
-                { id: "C", text: "Amazon SageMaker 데이터 랭글러" },
-                { id: "D", text: "Amazon SageMaker 모델 모니터" }
+                { id: "C", text: "Amazon SageMaker Data Wrangler" },
+                { id: "D", text: "Amazon SageMaker Model Monitor" }
             ],
             answer: "D",
-            explanation: "Amazon SageMaker 모델 모니터(Model Monitor)는 프로덕션 환경에 배포된 머신러닝 모델의 데이터 품질, 정확도 같은 모델 품질, 그리고 편향 요소가 시간이 지남에 따라 변질(드리프트)되는지 지속적으로 모니터링하여 경고를 보냅니다."
+            explanation: "- Amazon SageMaker Model Monitor는 프로덕션 환경에 배포된 기계 학습 모델을 지속적으로 모니터링하는 기능입니다. 시간이 지남에 따라 입력 데이터의 분포가 변하는 '데이터 드리프트(Data Drift)'나 모델 예측의 정확도가 떨어지는 '개념 드리프트(Concept Drift)'를 감지하여 원래 모델 품질에 변화가 생겼을 때 경고를 보내줍니다. 이를 통해 품질 저하 문제를 신속하게 파악하고 모델을 재학습하는 등의 조치를 취할 수 있습니다.<br><br>- Amazon SageMaker JumpStart: 사전 훈련된 다양한 오픈 소스 파운데이션 모델(FM)과 기계 학습 솔루션을 쉽게 검색하고 배포할 수 있게 해주는 허브입니다.<br><br>- Amazon SageMaker HyperPod: 대규모 언어 모델(LLM)이나 파운데이션 모델을 대규모 분산 클러스터 환경에서 안정적으로 훈련할 수 있도록 최적화된 인프라를 제공하는 기능입니다.<br><br>- Amazon SageMaker Data Wrangler: 기계 학습을 위한 데이터 준비와 피처 엔지니어링(데이터 정제, 변환 등) 과정을 시각적 인터페이스를 통해 간소화해 주는 도구입니다. 모델 배포 후의 품질 모니터링과는 무관합니다."
         },
         {
             id: 129,
@@ -1981,13 +1981,13 @@
             id: 130,
             question: "온라인 미디어 스트리밍 회사가 고객에게 자연어 기반 이미지 검색 및 필터링 기능을 제공하고자 합니다. 이 회사는 유사성 검색 및 최근접 이웃 쿼리에 도움이 되는 벡터 데이터베이스가 필요합니다. 어떤 AWS 서비스가 이러한 요구 사항을 충족합니까?",
             options: [
-                { id: "A", text: "아마존 컴프리헨드" },
-                { id: "B", text: "아마존 개인화" },
-                { id: "C", text: "아마존 폴리" },
-                { id: "D", text: "Amazon OpenSearch 서비스" }
+                { id: "A", text: "Amazon Comprehend" },
+                { id: "B", text: "Amazon Personalize" },
+                { id: "C", text: "Amazon Polly" },
+                { id: "D", text: "Amazon OpenSearch Service" }
             ],
             answer: "D",
-            explanation: "Amazon OpenSearch Service는 고차원 벡터 임베딩을 저장하고 k-NN(k-Nearest Neighbor) 알고리즘을 사용해 벡터 간 거리를 측정하여 자연어 쿼리와 유사한 이미지를 효율적으로 찾는 벡터 검색(시맨틱 검색) 기능을 완벽하게 지원합니다."
+            explanation: "- Amazon OpenSearch Service(과거 Amazon Elasticsearch Service)는 강력한 검색 및 분석 엔진으로, 벡터 데이터베이스 기능을 내장하고 있습니다. 특히 k-NN(k-Nearest Neighbor) 검색 기능을 통해 기계 학습 모델이 생성한 고차원 벡터(임베딩)를 저장하고 매우 빠르게 유사성을 검색할 수 있어, 자연어 기반의 이미지 검색이나 시맨틱 검색 요구 사항을 충족하는 데 가장 적합합니다.<br><br>- 아마존 컴프리헨드(Amazon Comprehend): 텍스트에서 감정이나 핵심 엔티티를 추출하는 자연어 처리(NLP) 서비스입니다. 데이터베이스 기능은 없습니다.<br><br>- 아마존 개인화(Amazon Personalize): 사용자 행동 데이터를 기반으로 맞춤형 상품이나 콘텐츠를 추천해 주는 기계 학습 서비스입니다. 벡터 데이터베이스로서 직접 유사성 검색 쿼리를 처리하는 용도는 아닙니다.<br><br>- 아마존 폴리(Amazon Polly): 텍스트를 자연스러운 사람의 음성으로 변환해 주는 TTS(Text-to-Speech) 서비스입니다. 검색이나 이미지와는 무관합니다."
         },
         {
             id: 131,
