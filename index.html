@@ -4062,8 +4062,8 @@
             question: "어떤 AWS 기능이 거버넌스 및 보고를 위해 ML 인스턴스 데이터에 대한 세부 정보를 기록합니까?",
             options: [
                 { id: "A", text: "Amazon SageMaker 모델 카드 (Model Cards)" },
-                { id: "B", text: "Amazon SageMaker 디버거" },
-                { id: "C", text: "Amazon SageMaker 모델 모니터" },
+                { id: "B", text: "Amazon SageMaker 디버거 (Debugger)" },
+                { id: "C", text: "Amazon SageMaker 모델 모니터 (Model Monitor)" },
                 { id: "D", text: "Amazon SageMaker JumpStart" }
             ],
             answer: "A",
@@ -4073,9 +4073,9 @@
             id: 304,
             question: "한 회사가 자사의 소매 애플리케이션을 지원하기 위해 머신러닝 모델을 개발하고 있습니다. 이 회사는 모델이 이전 작업에서 생성한 정보를 활용하여 모델의 학습 속도를 높이고자 합니다. 어떤 모델 학습 솔루션이 이러한 요구 사항을 충족할까요?",
             options: [
-                { id: "A", text: "지도 학습" },
-                { id: "B", text: "하이퍼파라미터 튜닝" },
-                { id: "C", text: "정규화 기법" },
+                { id: "A", text: "지도 학습 (Supervised learning)" },
+                { id: "B", text: "하이퍼파라미터 튜닝 (Hyper-Parameter Tuning)" },
+                { id: "C", text: "정규화 기법 (Regularization)" },
                 { id: "D", text: "전이 학습 (Transfer learning)" }
             ],
             answer: "D",
@@ -4091,27 +4091,27 @@
                 { id: "D", text: "각 문서에 대해 원핫 인코딩을 생성합니다." }
             ],
             answer: "B",
-            explanation: "원본 문서를 검색 증강 생성(RAG)의 지식 기반으로 사용하려면, 먼저 텍스트를 작은 덩어리(청크)로 나눈 뒤 모델이 이해하고 유사성 검색을 수행할 수 있도록 수치형 벡터인 '임베딩(Embeddings)'을 생성하여 벡터 데이터베이스에 저장해야 합니다. (참고: 원본 덤프에는 정답이 D(원핫 인코딩)로 잘못 기재되어 있으나, 기술적 사실에 맞게 B로 정정하였습니다)."
+            explanation: "대규모 언어 모델(LLM)이 수많은 문서를 빠르고 정확하게 검색하고 이해할 수 있게 하려면, 먼저 <b>긴 문서를 의미 있는 작은 텍스트 조각(청크, Chunk)으로 나누어야 합니다. 그다음 임베딩 모델을 사용하여 이 청크들을 단어의 문맥과 의미를 담은 다차원 숫자 배열인 '임베딩(Embeddings)'으로 변환합니다.</b> 변환된 임베딩 벡터를 벡터 데이터베이스에 저장해 두면, 사용자가 질문을 던질 때 질문 역시 임베딩으로 변환하여 수학적 유사도가 가장 높은 문서 조각을 찾아 LLM에 전달(RAG)할 수 있게 됩니다."
         },
         {
             id: 306,
             question: "한 회사가 휴대폰 카메라를 사용하여 곤충 물림을 진단하고 치료하는 모바일 머신러닝 앱을 개발하고 있습니다. 이 회사는 전 세계 다양한 성별, 민족, 지리적 위치에서 수집된 곤충 물림 사진 데이터 세트를 사용하여 이미지 분류 모델을 학습시키고자 합니다. 이 시나리오에서 회사는 어떤 책임 있는 AI 원칙을 보여주고 있나요?",
             options: [
                 { id: "A", text: "공정성 (Fairness)" },
-                { id: "B", text: "설명 가능성" },
-                { id: "C", text: "거버넌스" },
-                { id: "D", text: "투명성" }
+                { id: "B", text: "설명 가능성 (Explainability)" },
+                { id: "C", text: "거버넌스 (Governance)" },
+                { id: "D", text: "투명성 (Transparency)" }
             ],
             answer: "A",
-            explanation: "특정 인종이나 지리적 위치에 치우치지 않도록 피부색, 성별, 지역 등이 다양하게 포함된 대표성 있는 데이터 세트를 수집하는 것은 소외되는 그룹에 대한 편향을 줄이고 평등한 서비스를 제공하려는 '공정성(Fairness)' 원칙의 대표적인 실천 사례입니다."
+            explanation: "피부색이나 신체적 특징은 민족과 성별 등에 따라 매우 다양합니다. 만약 특정 인종이나 지역의 데이터에만 편중되어 AI를 학습시킨다면, 모델은 다른 피부색을 가진 사용자의 벌레 물린 자국을 제대로 진단하지 못하는 심각한 편향(Bias)을 띠게 됩니다. 이처럼 모든 인구 통계를 포괄하는 다양하고 대표성 있는 데이터를 의도적으로 수집하여 편향을 최소화하고, <b>모든 사용자 집단에게 차별 없이 동등한 수준의 성능을 제공</b>하도록 시스템을 설계하는 것은 책임 있는 AI(Responsible AI)의 가장 핵심적인 원칙인 <b>'공정성(Fairness)'</b>을 실천하는 구체적인 사례입니다.<br><br>투명성, Transparency): 사용자나 이해관계자에게 AI 시스템이 어떻게 작동하는지, 한계점(예: '이 앱은 의료 전문가를 대체할 수 없습니다')은 무엇인지 등을 명확하게 소통하고 공개하는 원칙입니다. 편향을 없애기 위해 데이터를 다양하게 구성하는 행위 자체의 목적은 공정성 달성에 있습니다."
         },
         {
             id: 307,
             question: "한 회사가 학습된 모델을 런타임 쿼리를 위한 API 엔드포인트를 통해 프로덕션 애플리케이션에서 사용할 수 있도록 하려고 합니다. 이 활동은 머신러닝 라이프사이클의 어느 단계에 해당합니까?",
             options: [
-                { id: "A", text: "데이터 준비" },
-                { id: "B", text: "모델 학습 및 튜닝" },
-                { id: "C", text: "모델 평가 및 검증" },
+                { id: "A", text: "데이터 준비 (Data preparation)" },
+                { id: "B", text: "모델 학습 및 튜닝 (Model training and tuning)" },
+                { id: "C", text: "모델 평가 및 검증 (Model evaluation and validation)" },
                 { id: "D", text: "모델 배포 및 추론 (Model deployment and inference)" }
             ],
             answer: "D",
@@ -4146,8 +4146,8 @@
             question: "사용자가 제공하는 데이터를 기반으로 비즈니스 인텔리전스 보고서를 생성하고 경영진 요약 보고서를 자동으로 생성하는 AWS 서비스는 무엇입니까?",
             options: [
                 { id: "A", text: "QuickSight의 Amazon Q" },
-                { id: "B", text: "아마존 레코그니션" },
-                { id: "C", text: "아마존 텍스트랙트" },
+                { id: "B", text: "아마존 레코그니션 (Recognition)" },
+                { id: "C", text: "아마존 텍스트랙트 (Textract)" },
                 { id: "D", text: "Amazon Polly" }
             ],
             answer: "A",
@@ -4158,9 +4158,9 @@
             question: "한 회사가 대출 승인을 위한 머신러닝(ML) 모델을 개발하고 있습니다. 이 회사는 모델의 편향을 감지하는 솔루션을 구현해야 합니다. 또한 모델의 예측을 설명할 수 있어야 합니다. 어떤 솔루션이 이러한 요구 사항을 충족시킬까요?",
             options: [
                 { id: "A", text: "Amazon SageMaker 설명 (Clarify)" },
-                { id: "B", text: "Amazon SageMaker 데이터 랭글러" },
-                { id: "C", text: "Amazon SageMaker 모델 카드" },
-                { id: "D", text: "AWS AI 서비스 카드" }
+                { id: "B", text: "Amazon SageMaker 데이터 랭글러 (Data Wrangler)" },
+                { id: "C", text: "Amazon SageMaker 모델 카드 (Model Cards)" },
+                { id: "D", text: "AWS AI 서비스 카드 (Service Cards)" }
             ],
             answer: "A",
             explanation: "Amazon SageMaker Clarify는 데이터 전처리 및 모델 학습 과정에서 발생할 수 있는 편향(Bias)을 탐지하고 측정하며, 모델 예측에 각 요인이 미친 영향을 시각화하여 모델의 설명 가능성(Explainability)을 제공하는 전용 서비스입니다."
@@ -4193,10 +4193,10 @@
             id: 314,
             question: "한 회사에서는 방대한 정책 문서에서 핵심적인 통찰력을 추출하여 직원의 효율성을 높이고자 합니다. 어떤 기술을 사용해야 합니까?",
             options: [
-                { id: "A", text: "회귀" },
-                { id: "B", text: "클러스터링" },
+                { id: "A", text: "회귀 (Regression)" },
+                { id: "B", text: "클러스터링 (Clustering)" },
                 { id: "C", text: "요약 (Summarization)" },
-                { id: "D", text: "분류" }
+                { id: "D", text: "분류 (classification)" }
             ],
             answer: "C",
             explanation: "방대하고 긴 문서에서 중요한 핵심 정보와 통찰력만 뽑아내어 간결하게 압축하는 자연어 처리 작업은 '요약(Summarization)'입니다."
@@ -4231,9 +4231,9 @@
             question: "한 금융 회사는 전 세계 여러 국가에 사무소를 두고 있습니다. 이 회사는 생성형 AI 애플리케이션과 기반 모델(FM) 간의 모든 API 호출이 공용 인터넷을 통해 전송되어서는 안 된다는 요구 사항을 가지고 있습니다. 이 회사는 어떤 AWS 서비스를 사용해야 할까요?",
             options: [
                 { id: "A", text: "AWS PrivateLink" },
-                { id: "B", text: "아마존 Q" },
-                { id: "C", text: "아마존 클라우드프론트" },
-                { id: "D", text: "AWS 클라우드트레일" }
+                { id: "B", text: "Amazon Q" },
+                { id: "C", text: "Amazon CloudFront" },
+                { id: "D", text: "AWS CloudTrail" }
             ],
             answer: "A",
             explanation: "AWS PrivateLink는 트래픽이 퍼블릭 인터넷을 거치지 않도록 보장하면서, 회사의 VPC와 Amazon Bedrock(FM) 간의 API 통신을 AWS 내부의 프라이빗 네트워크로 안전하게 라우팅해 줍니다."
@@ -4279,7 +4279,7 @@
             question: "AI 실무자가 대규모 언어 모델(LLM)을 사용하여 마케팅 캠페인을 위한 콘텐츠를 만들고 있습니다. 생성된 콘텐츠는 그럴듯하고 사실처럼 들리지만 사실이 아닙니다. LLM은 어떤 문제를 가지고 있나요?",
             options: [
                 { id: "A", text: "데이터 유출" },
-                { id: "B", text: "환각 (Hallucination)" },
+                { id: "B", text: "환각" },
                 { id: "C", text: "과적합" },
                 { id: "D", text: "과소적합" }
             ],
@@ -4296,16 +4296,16 @@
                 { id: "D", text: "Amazon SageMaker AI를 사용하여 FM을 사용자 정의한 다음, 학습된 모델을 Amazon Bedrock으로 가져옵니다." }
             ],
             answer: "D",
-            explanation: "Amazon Bedrock은 외부에서 미세 조정한 사용자 지정 모델을 가져오는(Custom model import) 기능을 지원합니다. SageMaker AI의 고급 도구로 특정 데이터셋을 이용해 모델을 훈련시킨 뒤 그 가중치를 Bedrock으로 가져와 완전 관리형 환경에서 안전하게 배포할 수 있습니다."
+            explanation: "Amazon Bedrock은 <b>'사용자 지정 모델 가져오기(Custom Model Import)'</b> 기능을 제공합니다. 이를 통해 기업은 <b>Amazon SageMaker</b>의 강력하고 유연한 머신러닝 환경을 활용하여 Llama, Mistral, Flan-T5와 같은 <b>오픈 소스 모델을 자사의 특정 사용 사례에 맞게 미세 조정(학습)</b>한 뒤, 완성된 모델 가중치를 Amazon Bedrock으로 안전하게 가져와(Import) 내부용으로 배포할 수 있습니다. 이렇게 하면 Bedrock의 표준화된 API를 통해 맞춤형 모델을 다른 상용 모델들과 동일하게 쉽고 안전하게 호출할 수 있습니다."
         },
         {
             id: 323,
             question: "사전 학습된 기초 모델(FM)이 요청을 처리하고 출력을 제공하는 속도를 나타내는 용어는 무엇입니까?",
             options: [
-                { id: "A", text: "모델 크기" },
+                { id: "A", text: "모델 크기 (Model Size)" },
                 { id: "B", text: "추론 지연 시간 (Inference latency)" },
-                { id: "C", text: "컨텍스트 창" },
-                { id: "D", text: "미세 조정" }
+                { id: "C", text: "컨텍스트 창 (Context window)" },
+                { id: "D", text: "미세 조정 (Fine-Tuning)" }
             ],
             answer: "B",
             explanation: "사용자가 파운데이션 모델에 프롬프트(입력)를 전송한 시점부터 모델이 계산을 마치고 첫 번째 응답(출력)을 반환할 때까지 걸리는 응답 속도의 지연을 '추론 지연 시간(Inference latency)'이라고 합니다."
@@ -4314,22 +4314,22 @@
             id: 324,
             question: "AI 실무자가 학습 데이터셋을 사용하여 모델을 학습시켰습니다. 모델은 학습 데이터셋에서는 좋은 성능을 보입니다. 그러나 평가 데이터셋에서는 성능이 좋지 않습니다. 이 문제의 가장 큰 원인은 무엇일까요?",
             options: [
-                { id: "A", text: "모델이 과소적합합니다." },
+                { id: "A", text: "모델이 과소적합(Underfitting)합니다." },
                 { id: "B", text: "이 모델은 프롬프트 엔지니어링이 필요합니다." },
                 { id: "C", text: "모델이 편향되어 있습니다." },
                 { id: "D", text: "모델이 과적합(Overfitting)되었습니다." }
             ],
             answer: "D",
-            explanation: "모델이 훈련 데이터의 특정 패턴과 노이즈까지 지나치게 암기해 버려, 정작 훈련에 사용되지 않은 보이지 않는 새로운 데이터(평가/테스트 데이터셋)에서는 일반화하지 못하고 성능이 현저히 떨어지는 현상을 '과적합(Overfitting)'이라고 합니다."
+            explanation: "이는 머신러닝 모델을 훈련할 때 가장 흔하게 발생하는 <b>과적합(Overfitting)</b> 문제입니다. 모델이 학습 데이터의 유용한 패턴뿐만 아니라 불필요한 노이즈나 지엽적인 특성까지 너무 완벽하게 '암기'해 버린 상태를 말합니다. 그 결과, 자신이 외운 학습 데이터에 대해서는 매우 높은 점수를 내지만, 처음 보는 새로운 데이터(평가 데이터)가 주어지면 제대로 대응하지 못해(일반화 성능 저하) 성능이 크게 떨어지게 됩니다.<br><br>- 모델이 과소적합합니다(Underfitting): 과소적합은 모델이 너무 단순하거나 학습이 충분히 진행되지 않아서 '학습 데이터셋에서조차' 패턴을 제대로 파악하지 못하고 낮은 성능을 보이는 상태를 말합니다. 문제의 시나리오와는 반대되는 상황입니다.<br><br>- 이 모델은 프롬프트 엔지니어링이 필요합니다: 프롬프트 엔지니어링은 주로 이미 훈련이 완료된 생성형 AI(대규모 언어 모델 등)에 입력하는 질문이나 지시문을 다듬어 더 나은 결과물을 얻어내는 기법입니다. 데이터셋 간의 근본적인 성능 격차(과적합) 원인을 설명하는 용어가 아닙니다.<br><br>- 모델이 편향되어 있습니다(Biased): 모델의 편향은 훈련 데이터의 불균형 등으로 인해 특정 인구 통계(성별, 인종 등)나 특정 상황에 대해 치우친(차별적인) 예측을 하는 현상을 의미합니다. 학습 데이터와 테스트 데이터 간의 전반적인 정확도 차이를 설명할 때 가장 먼저 꼽히는 직접적인 원인은 과적합입니다."
         },
         {
             id: 325,
             question: "한 회사가 심장병 위험을 예측하는 머신러닝 모델을 개발하고 있습니다. 이 모델은 나이, 콜레스테롤, 혈압, 흡연 여부, 운동 습관과 같은 환자 데이터를 사용합니다. 데이터 세트에는 환자의 심장병 여부를 나타내는 목표값이 포함되어 있습니다. 어떤 ML 기술이 이러한 요구 사항을 충족할까요?",
             options: [
-                { id: "A", text: "비지도 학습" },
+                { id: "A", text: "비지도 학습 (Unsupervised learning)" },
                 { id: "B", text: "지도 학습 (Supervised learning)" },
-                { id: "C", text: "강화 학습" },
-                { id: "D", text: "반지도 학습" }
+                { id: "C", text: "강화 학습 (Reinforcement learning)" },
+                { id: "D", text: "반지도 학습 (Semi-supervised learning)" }
             ],
             answer: "B",
             explanation: "입력 데이터(나이, 혈압 등)와 이미 알려진 명확한 정답 라벨(심장병 여부 목표값)을 짝지어 모델을 학습시키고 예측하도록 하는 것은 '지도 학습(Supervised learning)'의 전형적인 사례인 이진 분류 문제입니다."
@@ -4350,7 +4350,7 @@
             id: 327,
             question: "한 회사가 추론을 생성하기 위해 대규모 언어 모델(LLM)을 사용하는 데 따른 비용을 평가하고자 합니다. 이 회사는 Amazon Bedrock을 사용하여 생성형 AI 애플리케이션을 구축하고자 합니다. 어떤 요소가 추론 비용을 결정할까요?",
             options: [
-                { id: "A", text: "소모된 토큰 수 (Number of tokens)" },
+                { id: "A", text: "소모된 토큰 수" },
                 { id: "B", text: "온도 값" },
                 { id: "C", text: "LLM을 학습하는 데 사용된 데이터 양" },
                 { id: "D", text: "총 훈련 시간" }
@@ -4363,7 +4363,7 @@
             question: "한 회사가 인공지능 기반 대출 승인 시스템을 도입하고 있습니다. 이 회사는 인공지능 관련 데이터 거버넌스 규정을 준수해야 합니다. 어떤 솔루션이 이러한 요구 사항을 충족할까요?",
             options: [
                 { id: "A", text: "감사 추적 없이 사용자 선호도에 따라 AI 출력을 수정합니다." },
-                { id: "B", text: "AI 학습 데이터를 추적하고 관리하기 위해 데이터 수명주기 관리(Data lifecycle management)를 구현합니다." },
+                { id: "B", text: "AI 학습 데이터를 추적하고 관리하기 위해 데이터 수명주기 관리를 구현합니다." },
                 { id: "C", text: "데이터 상주 요건보다 AI 추론 시간 최적화를 우선시합니다." },
                 { id: "D", text: "규정 준수 위험을 방지하기 위해 모델 학습에는 합성 데이터만 사용하십시오." }
             ],
@@ -4375,7 +4375,7 @@
             question: "한 교육 회사가 개인 교습 앱을 개발하려고 합니다. 이 앱은 사용자가 질문을 텍스트로 입력하거나 사진을 첨부할 수 있도록 하며, 앱은 서면 답변과 함께 답변에 대한 설명을 제공합니다. 어떤 모델 유형이 이러한 요구 사항을 충족합니까?",
             options: [
                 { id: "A", text: "컴퓨터 비전 모델" },
-                { id: "B", text: "멀티모달 LLM (Multimodal LLM)" },
+                { id: "B", text: "멀티모달 LLM" },
                 { id: "C", text: "확산 모델" },
                 { id: "D", text: "텍스트 음성 변환 모델" }
             ],
@@ -4386,25 +4386,25 @@
             id: 330,
             question: "한 회사가 Amazon Comprehend를 사용하여 고객 피드백을 분석합니다. 고객은 여러 개의 고유한 학습된 모델을 보유하고 있습니다. 이 회사는 Comprehend를 사용하여 각 모델에 엔드포인트를 할당합니다. 15일 이상 사용되지 않은 각 엔드포인트에 대한 보고서를 자동화하려고 합니다. 어떤 서비스를 사용해야 합니까?",
             options: [
-                { id: "A", text: "AWS 신뢰할 수 있는 고문" },
+                { id: "A", text: "AWS Trusted Advisor" },
                 { id: "B", text: "Amazon CloudWatch" },
-                { id: "C", text: "AWS 클라우드 트레일" },
-                { id: "D", text: "AWS 구성" }
+                { id: "C", text: "AWS CloudTrail" },
+                { id: "D", text: "AWS Config" }
             ],
-            answer: "B",
-            explanation: "Amazon CloudWatch는 Amazon Comprehend 엔드포인트에 대한 호출(Invocation) 횟수 등의 사용량 지표를 수집하고 추적합니다. 이를 통해 15일 동안 호출이 '0'인 유휴 상태의 엔드포인트를 식별하고 경보를 설정하여 자동 보고를 구현할 수 있습니다."
+            answer: "A",
+            explanation: "- <b>AWS Trusted Advisor(신뢰할 수 있는 조언자)</b>는 사용자의 AWS 환경을 지속적으로 분석하여 비용 최적화, 성능, 보안, 내결함성 등의 모범 사례를 제안하는 서비스입니다. <b>비용 최적화(Cost optimization) 검사 항목 중에는 'Amazon Comprehend 활용도가 낮은 엔드포인트(Amazon Comprehend underutilized endpoints)'라는 기본 제공 검사가 있습니다.</b> 이 기능은 활성화되어 요금이 청구되고 있지만 지난 15일 연속으로 실시간 추론 요청이 없는 엔드포인트를 자동으로 식별하여 경고(보고서)해 주므로, 문제의 요구 사항을 가장 정확하고 쉽게 충족합니다."
         },
         {
             id: 331,
             question: "한 회사가 아마존 베드락을 사용하여 생성형 AI 솔루션을 구현했습니다. 이 AI 솔루션은 고객에게 개인화된 제품 추천을 제공합니다. 회사는 AI 솔루션이 매출에 미치는 영향을 평가하고자 합니다. 어떤 지표가 이러한 요구 사항을 충족할까요?",
             options: [
-                { id: "A", text: "도메인 간 성능" },
-                { id: "B", text: "솔루션 효율성" },
-                { id: "C", text: "사용자 만족도" },
+                { id: "A", text: "도메인 간 성능 (Cross-domain performance)" },
+                { id: "B", text: "솔루션 효율성 (Solution efficiency)" },
+                { id: "C", text: "사용자 만족도 (User satisfaction)" },
                 { id: "D", text: "전환율 (Conversion rate)" }
             ],
             answer: "D",
-            explanation: "제품 추천 시스템이 비즈니스 수익(매출)에 미치는 실질적인 효과를 가장 정확하게 보여주는 핵심 성과 지표(KPI)는 추천을 받은 후 실제로 구매 버튼을 클릭하여 결제까지 완료한 사용자의 비율인 '전환율(Conversion rate)'입니다."
+            explanation: "- <b>전환율(Conversion rate)</b>은 추천 시스템이나 AI 솔루션을 이용한 고객 중 실제 제품 구매(매출 발생)로 이어진 비율을 나타냅니다. 예를 들어 추천 목록을 본 후 실제 제품을 클릭하여 결제까지 완료한 고객의 비율을 측정하므로, AI 솔루션이 매출 성장에 얼마나 직접적으로 기여했는지 평가하는 데 가장 정확하고 직접적인 지표입니다.<br><br>- 도메인 간 성능(Cross-domain performance): AI 모델이 특정 분야(예: 패션)에서 학습한 지식을 다른 분야(예: 가전제품)로 얼마나 잘 적용하는지 평가하는 기술적 지표입니다. 비즈니스 매출 영향도와는 관련이 없습니다.<br><br>- 솔루션 효율성(Solution efficiency): 시스템의 응답 시간(Latency), GPU/메모리 사용량, 추론 처리 비용 등 기술적/운영적 성능을 의미합니다. 매출에 미치는 직접적인 가치 측정이 아닙니다.<br><br>- 사용자 만족도(User satisfaction): CSAT, NPS 등의 설문이나 별점 평가로 측정되며 유용한 비즈니스 지표이긴 합니다. 하지만 사용자가 추천에 '만족'했더라도 반드시 '구매(매출)'로 연결되는 것은 아니므로, 문제에서 요구한 '매출에 미치는 영향'을 직관적으로 증명하기에는 전환율보다 간접적입니다."
         },
         {
             id: 332,
@@ -4416,7 +4416,7 @@
                 { id: "D", text: "AWS Glue Data Quality를 사용하여 각 이미지를 수정합니다." }
             ],
             answer: "B",
-            explanation: "이미지를 단순하게 회전하거나 전치(뒤집기)하는 작업은 무거운 딥러닝 모델이 필요 없는 기본적인 픽셀 연산 처리입니다. 서버를 관리할 필요 없이 이벤트가 발생할 때마다 짧은 코드를 실행하는 서버리스 서비스인 AWS Lambda를 사용하는 것이 가장 효율적입니다."
+            explanation: "이미지를 단순하게 회전하거나 전치(뒤집기)하는 작업은 무거운 딥러닝 모델이 필요 없는 기본적인 픽셀 연산 처리입니다. OpenCV, Pillow(PIL), NumPy 등의 표준 라이브러리를 사용하여 <b>몇 줄의 코드로 즉시 처리할 수 있는 결정론적(Deterministic) 데이터 전처리 작업</b>입니다. 이러한 이벤트 기반의 경량화된 이미지 처리 로직은 서버리스 FaaS(Function as a Service) 서비스인 AWS Lambda를 사용하여 구축하는 것이 가장 적합합니다. S3에 이미지가 업로드될 때 Lambda 함수를 트리거하여 자동으로 변환을 실행하면 인프라 관리 없이 극히 저렴한 비용으로 빠르게 처리할 수 있습니다."
         },
         {
             id: 333,
