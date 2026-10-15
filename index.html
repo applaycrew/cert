@@ -436,7 +436,7 @@
                 { id: "D", text: "선형 학습기" }
             ],
             answer: "B",
-            explanation: "K-평균(K-means)은 레이블이 지정되지 않은 데이터를 특징 유사성과 거리 측정 기준에 따라 클러스터로 그룹화하는 데 사용되는 비지도 학습 알고리즘입니다."
+            explanation: "- <b>K-평균(K-Means)</b>은 정답(Label)이 없는 데이터셋에서 각 데이터 포인트 간의 거리(유사성)를 계산하여 $K$개의 군집(Cluster)으로 묶어주는 대표적인 비지도 학습(Unsupervised Learning) 클러스터링 알고리즘입니다. 고객 세그먼트 분류, 패턴 그룹화 등에 널리 활용됩니다.<br><br>- XGBoost: 정답 레이블이 있는 데이터로 학습하는 지도 학습(Supervised Learning) 기반의 의사결정 나무(Decision Tree) 그래디언트 부스팅 알고리즘입니다. 주로 분류(Classification)나 회귀(Regression) 문제에 쓰입니다.<br><br>- DeepAR 예측(DeepAR Forecasting): 시간의 흐름에 따른 데이터(일별 매출, 전력 소비량 등)를 예측하는 시계열 예측(Time-Series Forecasting) 전용 알고리즘입니다.<br><br>- 선형 학습기(Linear Learner): 입력 변수와 타깃 변수 간의 선형 관계를 모델링하는 지도 학습 알고리즘으로, 숫자 예측(선형 회귀)이나 이진/다중 분류(로지스틱 회귀)에 사용됩니다."
         },
 		{
             id: 2,
@@ -4693,7 +4693,7 @@
                 { id: "D", text: "프로비저닝된 처리량을 사용합니다." }
             ],
             answer: "B",
-            explanation: "Amazon Bedrock의 주문형 요금은 사용된 토큰(입력+출력) 수를 기준으로 부과됩니다. 현재 퓨샷 프롬프트의 성능이 이미 좋으므로, 예시의 길이나 개수를 다듬어 입력 토큰 수를 줄이면 성능을 유지하면서도 직접적으로 과금되는 비용을 절감할 수 있습니다."
+            explanation: "Amazon Bedrock의 온디맨드(On-Demand) 요금제는 모델에 전달되는 입력 토큰(Input Tokens) 수와 출력 토큰 수에 비례하여 요금이 청구됩니다. 현재 프롬프트에는 <b>10개의 예시(Few-shot examples)가 포함되어 있어 입력 토큰 수가 늘어난 상태</b>입니다. <b>예시의 개수를 줄이거나 불필요한 문구를 정리</b>하여 프롬프트의 토큰 수를 줄이면(B) 매 호출마다 발생하는 입력 요금이 직접적으로 감소하므로 월간 비용을 절감할 수 있습니다."
         },
         {
             id: 356,
@@ -4831,9 +4831,9 @@
             id: 367,
             question: "한 회사에서 대규모 언어 모델(LLM)을 사용하여 온라인 튜터링 애플리케이션을 개발하고 있습니다. 이 회사는 LLM에 구성 가능한 보안 조치를 적용해야 합니다. 이러한 보안 조치는 LLM이 애플리케이션 개발 시 표준 보안 규칙을 준수하도록 보장해야 합니다. 어떤 솔루션이 가장 적은 노력으로 이러한 요구 사항을 충족할 수 있을까요?",
             options: [
-                { id: "A", text: "아마존 베드록 놀이터 (Playground)" },
-                { id: "B", text: "Amazon SageMaker 설명" },
-                { id: "C", text: "아마존 베드록 가드레일 (Guardrails)" },
+                { id: "A", text: "Amazon Bedrock Playground)" },
+                { id: "B", text: "Amazon SageMaker Clarify" },
+                { id: "C", text: "Amazon Bedrock Guardrails" },
                 { id: "D", text: "Amazon SageMaker JumpStart" }
             ],
             answer: "C",
@@ -4856,7 +4856,7 @@
             question: "한 회사가 제품 설명서를 기반으로 고객 문의에 답변하는 인공지능 기반 상담원을 개발했습니다. 어떤 전략이 인공지능 기반 상담원의 답변에 대한 고객 신뢰도를 높일 수 있을까요?",
             options: [
                 { id: "A", text: "답변에 신뢰도 수준을 기재하기" },
-                { id: "B", text: "응답에 참조된 제품 설명서 링크 포함 (출처 제공)" },
+                { id: "B", text: "응답에 참조된 제품 설명서 링크 포함" },
                 { id: "C", text: "컴퓨터처럼 보이는 에이전트 아바타 디자인하기" },
                 { id: "D", text: "회사에서 사용하는 언어 스타일로 응답하도록 에이전트를 훈련합니다." }
             ],
@@ -4921,19 +4921,19 @@
                 { id: "D", text: "LLM을 미세 조정합니다." }
             ],
             answer: "C",
-            explanation: "Amazon Bedrock의 서로 다른 파운데이션 모델(LLM)들은 각기 최적화된 프롬프트 양식, 지원하는 특수 토큰, 지시문을 이해하는 방식이 조금씩 다릅니다. 따라서 모델을 전환할 때는 새로운 모델의 특성에 맞게 기존의 '프롬프트 템플릿을 조정'하는 것이 필수적인 선행 작업입니다."
+            explanation: "LLM(예: Anthropic Claude, Meta Llama, AI21 Jurassic 등)은 공급업체나 모델 아키텍처마다 지시문(System Prompt)을 해석하는 방식, 최적의 입출력 포맷, 특수 토큰 처리 규격이 서로 다릅니다. 따라서 동일한 작업(문서 정보 추출)을 수행하더라도 새로운 모델에서 최상의 성능과 정확한 형식의 답변을 얻어내기 위해서는 해당 모델의 특성에 맞게 <b>프롬프트 템플릿을 조정(Prompt Engineering/Adjustment)</b>해야 합니다."
         },
         {
             id: 375,
             question: "한 회사가 ML 모델을 구축하고 있습니다. 이 회사는 새로운 데이터를 수집하고 상관 행렬을 만들고, 통계를 계산하고, 데이터를 시각화하여 데이터를 분석했습니다. 현재 회사는 ML 파이프라인의 어느 단계에 있습니까?",
             options: [
-                { id: "A", text: "데이터 전처리" },
-                { id: "B", text: "기능 엔지니어링" },
-                { id: "C", text: "탐색적 데이터 분석" },
-                { id: "D", text: "하이퍼파라미터 튜닝" }
+                { id: "A", text: "데이터 전처리 (Data Preprocessing)" },
+                { id: "B", text: "기능 엔지니어링 (Feature Engineering)" },
+                { id: "C", text: "탐색적 데이터 분석 (Exploratory Data Analysis, EDA)" },
+                { id: "D", text: "하이퍼파라미터 튜닝 (Hyperparameter Tuning)" }
             ],
             answer: "C",
-            explanation: "데이터 과학자가 모델 학습에 앞서 수집된 데이터를 이해하기 위해 통계 요약, 시각화, 상관관계 분석 등을 통해 데이터의 분포, 이상치, 주요 특징을 파악하는 단계를 '탐색적 데이터 분석(Exploratory Data Analysis, EDA)'이라고 합니다."
+            explanation: "데이터 과학자가 모델 학습에 앞서 수집된 데이터를 이해하기 위해 통계 요약, 시각화, 상관관계 분석 등을 통해 데이터의 분포, 이상치, 주요 특징을 파악하는 단계를 <b>'탐색적 데이터 분석(Exploratory Data Analysis, EDA)'</b>이라고 합니다.<br><br>- 데이터 전처리(Data Preprocessing): EDA를 통해 데이터의 특성을 파악한 후, 결측치 처리, 이상치 제거, 스케일링(Normalization/Standardization) 등을 수행하여 모델이 학습하기 좋은 상태로 다듬는 실제 정제 단계입니다.<br><br>- 기능 엔지니어링(Feature Engineering): 파악된 데이터를 바탕으로 원본 특성(Feature)들을 조합, 변환, 인코딩하거나 새로운 의미 있는 특성을 만들어 내어 모델의 성능을 향상시키는 과정입니다.<br><br>- 하이퍼파라미터 튜닝(Hyperparameter Tuning): 데이터 수집 및 가공이 모두 끝나고, 모델의 구조 및 학습 방식에 영향을 주는 매개변수(학습률, 배치 크기, 나무의 깊이 등)의 최적 조합을 찾기 위한 모델 학습/평가 단계입니다."
         },
         {
             id: 376,
@@ -4969,7 +4969,7 @@
                 { id: "D", text: "토큰 길이 (Token length)" }
             ],
             answer: "C",
-            explanation: "확산 모델(Diffusion model) 기반의 이미지 생성형 AI에서, 생성 단계(Inference steps) 매개변수는 초기 노이즈에서 점진적으로 이미지를 다듬는 반복 횟수를 의미합니다. 이 값을 낮추면 거칠고 추상적인 이미지가, 높이면 매우 세밀하고 선명한 사실적 이미지가 출력됩니다."
+            explanation: "이 문제의 핵심은 확산 모델(Diffusion Model) 기반의 이미지 생성 기초 모델(Amazon Titan Image Generator, Stable Diffusion 등)에서 이미지의 세부 묘사 수준(Detail Level)과 디테일/추상화 정도를 제어하는 하이퍼파라미터를 찾는 것입니다.<br><br>이미지 생성 모델은 노이즈(Noise) 상태에서 시작하여 여러 단계(Steps)에 걸쳐 제거하며 이미지를 완성합니다.<br><br><b>Inference Steps(추론/생성 단계 수)를 높이면</b>: 노이즈를 더 여러 번 제거하고 디테일을 정교하게 다듬어 선명하고 매우 자세한(Detailed) 이미지가 생성됩니다.<br><br><b>Inference Steps를 낮추면</b>: 노이즈 제거 과정이 적어 더 단순하고 추상적이거나(Abstract) 거친 스타일의 이미지가 생성됩니다.<br><br>- 모델 체크포인트(Model Checkpoint): 모델 가중치가 저장된 특정 상태(파일)를 나타내며, 추론 시 실시간으로 이미지의 세부 디테일 정도를 조정하기 위한 모델 파라미터가 아닙니다.<br><br>- 배치 크기(Batch Size): 한 번에 몇 개의 이미지를 병렬로 생성할지 결정하는 성능/메모리 관련 파라미터입니다. 이미지의 미술적 디테일이나 내용 스타일에는 영향을 주지 않습니다.<br><br>- 토큰 길이(Token length): 대규모 언어 모델(LLM) 및 프롬프트 텍스트의 최대 입력/출력 길이 제한을 뜻합니다. 생성되는 이미지 픽셀의 정밀도나 디테일을 제어하는 수치 매개변수가 아닙니다."
         },
         {
             id: 379,
@@ -5060,7 +5060,7 @@
             question: "한 회사가 AI 데이터셋을 아마존 S3 버킷에 저장하고 있습니다. 이 회사는 해당 S3 버킷을 비즈니스 파트너와 공유하고자 합니다. 하지만 민감한 데이터가 실수로 공유되는 것을 방지해야 합니다. 데이터 세트에서 민감한 데이터를 찾아내려면 회사는 어떤 AWS 서비스를 사용해야 할까요?",
             options: [
                 { id: "A", text: "아마존 켄드라 (Kendra)" },
-                { id: "B", text: "아마존 맥 (Macie)" },
+                { id: "B", text: "아마존 메이시 (Macie)" },
                 { id: "C", text: "아마존 텍스트랙트 (Textract)" },
                 { id: "D", text: "AWS 데이터 교환 (Data Exchange)" }
             ],
@@ -5071,13 +5071,13 @@
             id: 387,
             question: "AI 회사는 ISV(Independent Software Vendor)의 도움을 받아 주기적으로 시스템과 프로세스를 평가합니다. 회사는 ISV의 컴플라이언스 보고서가 제공되면 이메일 메시지 알림을 받아야 합니다. 이 요구 사항을 충족하기 위해 회사에서는 어떤 AWS 서비스를 사용할 수 있습니까?",
             options: [
-                { id: "A", text: "AWS 감사 관리자" },
-                { id: "B", text: "AWS 아티팩트" },
-                { id: "C", text: "AWS 신뢰할 수 있는 고문" },
-                { id: "D", text: "AWS 데이터 교환" }
+                { id: "A", text: "AWS 감사 관리자 (Audit Manager)" },
+                { id: "B", text: "AWS 아티팩트 (Artifact)" },
+                { id: "C", text: "AWS 신뢰할 수 있는 고문 (Trusted Advisor)" },
+                { id: "D", text: "AWS 데이터 교환 (Data Exchange)" }
             ],
-            answer: "D",
-            explanation: "타사 제공업체(ISV)의 데이터 세트나 컴플라이언스 문서 등을 구독하고 보안 방식으로 안전하게 가져오며, 공급업체가 새로운 버전의 보고서를 게시할 때 이메일 알림 등을 수신하도록 설정할 수 있는 타사 데이터 공유 플랫폼은 AWS Data Exchange입니다."
+            answer: "B",
+            explanation: "이 문제의 핵심은 ISV(독립 소프트웨어 개발업체)나 AWS의 보안 및 컴플라이언스 보고서(Compliance Reports)를 확인하고, 새 보고서가 출시되었을 때 알림을 받는 서비스를 찾는 것입니다.<br><br>AWS Artifact는 AWS의 규정 준수 보고서(SOC, PCI, ISO 등) 및 AWS Marketplace에 등록된 ISV의 보안/컴플라이언스 리포트를 온디맨드로 다운로드하고 조회할 수 있는 중앙 리포지토리 서비스입니다.<br><br><b>AWS Artifact Notifications 기능</b>: 사용자는 AWS Artifact에서 특정 ISV 보고서나 규정 준수 문서가 새롭게 업데이트되거나 추가될 때 이메일(Amazon SNS 결합 등)로 알림을 받도록 설정할 수 있습니다.<br><br>- AWS 감사 관리자(AWS Audit Manager): 기업 내부의 AWS 리소스 사용 현황이 내부 정책이나 규제 표준(GDPR, HIPAA 등)을 준수하는지 증거(Evidence)를 지속적으로 자동 수집해 주는 서비스입니다. 외부 ISV의 컴플라이언스 보고서 유통 및 알림 수신 서비스가 아닙니다.<br><br>- AWS 신뢰할 수 있는 고문(AWS Trusted Advisor): AWS 계정의 리소스 최적화, 보안 스탠딩, 비용 절감, 성능 향상 등을 위해 리소스를 실시간 검사하고 권장 사항을 제공해 주는 자동화 모니터링 도구입니다.<br><br>- AWS 데이터 교환(AWS Data Exchange): 클라우드 상에서 비즈니스 데이터 세트(금융, 인구통계, 기상 데이터 등)를 안전하게 찾고, 구독하고, 사용할 수 있게 해주는 데이터 거래 플랫폼입니다."
         },
         {
             id: 388,
@@ -5241,10 +5241,10 @@
             id: 401,
             question: "한 회사가 파운데이션 모델(FM)을 사용자 정의하려고 합니다. 다음 목록에서 각 설명에 맞는 사용자 지정 방법을 바르게 짝지은 것은 무엇입니까?\n\n[작업 1] 특정 작업에 대한 성능을 개선하기 위해 모델을 사용자 정의할 수 있는 레이블이 지정된 데이터를 제공합니다.\n[작업 2] 특정 도메인에 대한 FM을 사용자 지정하기 위해 레이블이 지정되지 않은 데이터를 제공합니다.\n[작업 3] 더 크고 지능적인 모델의 지식을 더 작은 모델로 전송합니다.",
             options: [
-                { id: "A", text: "[작업 1] 사전 교육 지속, [작업 2] 미세 조정, [작업 3] 증류" },
+                { id: "A", text: "[작업 1] 사전 교육 지속 (Continued pre-training), [작업 2] 미세 조정 (Fine-tuning), [작업 3] 증류 (Distillation)" },
                 { id: "B", text: "[작업 1] 미세 조정 (Fine-tuning), [작업 2] 사전 교육 지속 (Continued pre-training), [작업 3] 증류 (Distillation)" },
-                { id: "C", text: "[작업 1] 증류, [작업 2] 사전 교육 지속, [작업 3] 미세 조정" },
-                { id: "D", text: "[작업 1] 미세 조정, [작업 2] 증류, [작업 3] 사전 교육 지속" }
+                { id: "C", text: "[작업 1] 증류 (Distillation), [작업 2] 사전 교육 지속 (Continued pre-training), [작업 3] 미세 조정 (Fine-tuning)" },
+                { id: "D", text: "[작업 1] 미세 조정 (Fine-tuning), [작업 2] 증류 (Distillation), [작업 3] 사전 교육 지속 (Continued pre-training)" }
             ],
             answer: "B",
             explanation: "레이블이 지정된 데이터(정답이 있는 데이터)로 특정 작업 성능을 높이는 것은 '미세 조정(Fine-tuning)', 레이블 없는 대량의 도메인 특화 데이터로 기본 지식을 향상시키는 것은 '사전 교육 지속(Continued pre-training)', 큰 모델(Teacher)의 지식을 작고 가벼운 모델(Student)로 압축해 옮기는 기술은 '증류(Distillation)'입니다."
@@ -5253,7 +5253,7 @@
             id: 402,
             question: "기업은 후처리 ML 라이프사이클 동안 생성형 AI 애플리케이션의 편향과 독성을 낮추기 위해 어떤 기술을 사용할 수 있습니까?",
             options: [
-                { id: "A", text: "인간 참여 루프 (Human-in-the-loop)" },
+                { id: "A", text: "인간 참여 루프" },
                 { id: "B", text: "데이터 증강" },
                 { id: "C", text: "기능 엔지니어링" },
                 { id: "D", text: "적대적 훈련" }
@@ -5277,7 +5277,7 @@
             id: 404,
             question: "한 회사에서는 고객 이탈을 예측하기 위해 ML 모델을 개발하고 있습니다. 이진 분류 작업(예: 고객 이탈 예측)에서 모델의 성능을 평가할 평가 지표는 무엇입니까?",
             options: [
-                { id: "A", text: "F1 점수 (F1 score)" },
+                { id: "A", text: "F1 점수" },
                 { id: "B", text: "평균 제곱 오차(MSE)" },
                 { id: "C", text: "R 제곱" },
                 { id: "D", text: "모델을 학습하는 데 사용된 시간" }
@@ -5289,10 +5289,10 @@
             id: 405,
             question: "한 금융 서비스 회사가 AWS를 사용하여 AI 모델을 개발했습니다. 이 AI 모델은 고객 대출 신청서 검토를 지원합니다. 규제 요건상 투명성이 요구되므로, 회사는 모델이 어떻게 결정을 내리는지 설명할 수 있어야 합니다. 어떤 AWS 서비스 또는 기능이 이러한 요구 사항을 충족합니까?",
             options: [
-                { id: "A", text: "아마존 세이지메이커 클래리파이 (Clarify)" },
-                { id: "B", text: "아마존 인식 (Rekognition)" },
-                { id: "C", text: "아마존 컴프리헨드" },
-                { id: "D", text: "아마존 세이지메이커 모델 모니터" }
+                { id: "A", text: "Amazon SageMaker Clarify" },
+                { id: "B", text: "Amazon Rekognition" },
+                { id: "C", text: "Amazon Comprehend" },
+                { id: "D", text: "Amazon SageMaker Model Monitor" }
             ],
             answer: "A",
             explanation: "대출 승인과 같은 금융 모델에서 각 특성(수입, 부채 등)이 예측 결과에 어떻게, 얼마나 기여했는지(Shapley 값 기반) 시각화하여 모델의 투명성과 설명 가능성(Explainability)을 제공하는 서비스는 Amazon SageMaker Clarify입니다."
@@ -5313,10 +5313,10 @@
             id: 407,
             question: "한 회사가 직원들이 내부 데이터를 조회할 수 있도록 인공지능을 구축하려고 합니다. 어떤 AWS 서비스가 이 요구 사항을 충족할까요?",
             options: [
-                { id: "A", text: "아마존 레코그니션" },
-                { id: "B", text: "아마존 텍스트랙트" },
-                { id: "C", text: "아마존 렉스" },
-                { id: "D", text: "아마존 Q 비즈니스 (Amazon Q Business)" }
+                { id: "A", text: "Amazon Recognition" },
+                { id: "B", text: "Amazon Textract" },
+                { id: "C", text: "Amazon Lex" },
+                { id: "D", text: "Amazon Q Business" }
             ],
             answer: "D",
             explanation: "(참고: 원본 덤프에는 정답이 C(Lex)로 되어 있으나 기술적 사실에 맞게 교정되었습니다.) 기업 내부의 수많은 엔터프라이즈 데이터(위키, 인트라넷, 사내 문서 등)를 연결하여 직원들이 자연어로 질문하고 사내 지식을 조회할 수 있도록 설계된 AI 비서 서비스는 Amazon Q Business입니다."
@@ -5327,8 +5327,8 @@
             options: [
                 { id: "A", text: "몇 번의 촬영으로 시작 (Few-shot prompting)" },
                 { id: "B", text: "사고의 연쇄 유도 (Chain-of-thought prompting)" },
-                { id: "C", text: "프롬프트 템플릿" },
-                { id: "D", text: "제로샷 프롬프팅" }
+                { id: "C", text: "프롬프트 템플릿 (Prompt Template)" },
+                { id: "D", text: "제로샷 프롬프팅 (Zero-shot Prompting)" }
             ],
             answer: "B",
             explanation: "언어 모델이 단순히 결과만 내뱉는 것이 아니라, 최종 답변에 도달하기 전까지의 복잡한 논리적 중간 추론 단계를 단계별로 차근차근 풀어서 설명하도록 지시하는 프롬프트 엔지니어링 기법을 '생각의 사슬(Chain-of-thought) 프롬프팅'이라고 합니다."
@@ -5350,21 +5350,21 @@
             question: "한 회사는 예상 수요를 충족하기 위해 운영을 최적화하는 방법을 결정하기 위해 매 분기마다 예측을 내립니다. 이 회사는 ML 모델을 사용하여 이러한 예측을 내립니다. AI 실무자는 회사 이해관계자들에게 투명성과 설명 가능성을 제공하기 위해 훈련된 ML 모델에 대한 보고서를 작성하고 있습니다. AI 실무자는 보고서에 무엇을 포함해야 합니까?",
             options: [
                 { id: "A", text: "모델 학습을 위한 코드" },
-                { id: "B", text: "부분 의존성 플롯 (PDP)" },
+                { id: "B", text: "부분 의존성 플롯" },
                 { id: "C", text: "학습을 위한 샘플 데이터" },
                 { id: "D", text: "모델 수렴 표" }
             ],
             answer: "B",
-            explanation: "비기술직 이해관계자에게 모델의 예측 메커니즘을 설명하려면, 특정 입력 특성(예: 계절, 마케팅 예산)의 변화가 최종 수요 예측 결과에 미치는 한계 효과를 직관적인 그래프로 보여주는 '부분 의존성 플롯(Partial Dependence Plot, PDP)'을 보고서에 포함해야 합니다."
+            explanation: "부분 의존성 플롯(Partial Dependence Plot, PDP)은 특정 입력 특성(Feature, 예: 제품 가격, 계절성, 할인율 등)이 모델의 예측 결과(예: 수요 예측량)에 미치는 한계 효과(Marginal effect)를 시각화해 주는 대표적인 설명 가능한 AI(XAI) 도구입니다. 비전문가인 이해관계자도 '특정 변수가 올라갈 때 예측 수요가 어떻게 변화하는지' 직관적으로 이해할 수 있어 모델의 투명성을 입증하기 위한 리포트에 포함하기 가장 적절합니다."
         },
         {
             id: 411,
             question: "한 회사가 AI/ML 서비스를 이용하여 대화형 AI 애플리케이션을 구축하려고 합니다. 어떤 AWS 서비스가 이러한 요구 사항을 충족할까요?",
             options: [
-                { id: "A", text: "아마존 컴프리헨드" },
-                { id: "B", text: "아마존 렉스 (Amazon Lex)" },
-                { id: "C", text: "아마존 폴리" },
-                { id: "D", text: "아마존 번역" }
+                { id: "A", text: "Amazon Comprehend" },
+                { id: "B", text: "Amazon Lex" },
+                { id: "C", text: "Amazon Polly" },
+                { id: "D", text: "Amazon Translate" }
             ],
             answer: "B",
             explanation: "Amazon Lex는 음성 및 텍스트를 사용하는 애플리케이션에 대화형 인터페이스(챗봇)를 구축하기 위한 서비스로, 자연어 이해(NLU)와 자동 음성 인식(ASR) 기능을 내장하여 대화의 의도(Intent)를 파악하고 대화 흐름을 관리합니다."
@@ -5374,7 +5374,7 @@
             question: "AI 실무자는 Amazon Bedrock 기반 모델을 사용하여 고객 서비스 부서의 세션 채팅을 요약하고 있습니다. AI 실무자는 모델 입력 및 출력 데이터를 모니터링하기 위해 호출 로그를 저장하려고 합니다. AI 실무자는 어떤 전략을 사용해야 할까?",
             options: [
                 { id: "A", text: "모델의 로그 대상으로 AWS CloudTrail을 구성합니다." },
-                { id: "B", text: "Amazon Bedrock에서 호출 로깅(Invocation logging)을 활성화합니다." },
+                { id: "B", text: "Amazon Bedrock에서 호출 로깅을 활성화합니다." },
                 { id: "C", text: "모델의 로그 대상으로 AWS Audit Manager를 구성합니다." },
                 { id: "D", text: "Amazon EventBridge에서 모델 호출 로깅을 구성합니다." }
             ],
@@ -5385,7 +5385,7 @@
             id: 413,
             question: "한 병원에서 환자에게 맞춤형 치료 추천을 제공하는 AI 시스템을 개발했습니다. AI 시스템은 추천의 근거를 제시하고, 의사와 환자가 그 통찰력을 활용할 수 있도록 해야 합니다. 이 시나리오는 어떤 인간 중심적 디자인 원칙을 제시합니까?",
             options: [
-                { id: "A", text: "설명 가능성 (Explainability)" },
+                { id: "A", text: "설명 가능성" },
                 { id: "B", text: "개인정보 보호 및 보안" },
                 { id: "C", text: "공정성" },
                 { id: "D", text: "데이터 거버넌스" }
@@ -5397,9 +5397,9 @@
             id: 414,
             question: "한 리서치 회사가 법률 문서를 분석해야 합니다. 해당 문서는 최대 100만 토큰에 달하며 고해상도 차트가 포함되어 있습니다. 또한, 규정 준수 보고서를 생성하기 위해 비디오 요약본도 입력받아야 합니다. 이러한 요구 사항을 충족하는 아마존 노바 모델은 무엇입니까?",
             options: [
-                { id: "A", text: "아마존 노바 마이크로" },
-                { id: "B", text: "아마존 노바 라이트" },
-                { id: "C", text: "아마존 노바 프로" },
+                { id: "A", text: "아마존 노바 마이크로 (Nova Micro)" },
+                { id: "B", text: "아마존 노바 라이트 (Nova Lite)" },
+                { id: "C", text: "아마존 노바 프로 (Nova Pro)" },
                 { id: "D", text: "아마존 노바 프리미어 (Nova Premier)" }
             ],
             answer: "D",
@@ -5409,10 +5409,10 @@
             id: 415,
             question: "한 회사가 대규모 언어 모델(LLM)을 사용하여 챗봇을 개발하려고 합니다. 이 챗봇은 고객의 제품 문의, 주문 추적 및 반품을 지원할 것입니다. 챗봇은 텍스트 입력과 이미지 입력을 모두 처리하여 응답을 생성할 수 있어야 합니다. 어떤 AWS 서비스가 이러한 요구 사항을 충족합니까?",
             options: [
-                { id: "A", text: "아마존 베드락 (Amazon Bedrock)" },
-                { id: "B", text: "아마존 컴프리헨드" },
-                { id: "C", text: "아마존 Q" },
-                { id: "D", text: "아마존 레코그니션" }
+                { id: "A", text: "Amazon Bedrock" },
+                { id: "B", text: "Amazon Comprehend" },
+                { id: "C", text: "Amazon Q" },
+                { id: "D", text: "Amazon Recognition" }
             ],
             answer: "A",
             explanation: "텍스트뿐만 아니라 이미지 입력까지 이해하고 처리할 수 있는 강력한 '멀티모달 파운데이션 모델(예: Claude 3, Nova 등)'을 단일 API로 쉽게 호출하고 챗봇 애플리케이션에 통합할 수 있도록 제공하는 서비스는 Amazon Bedrock입니다."
@@ -5422,7 +5422,7 @@
             question: "회사는 내부적으로 사용할 Amazon Bedrock의 모델을 선택해야 합니다. 회사는 회사 직원이 선호하는 언어 스타일과 어조로 응답을 생성하는 모델을 식별해야 합니다. 이러한 요구 사항을 충족하기 위해 회사는 무엇을 해야 합니까?",
             options: [
                 { id: "A", text: "내장된 프롬프트 데이터 세트를 사용하여 모델을 자동 평가합니다." },
-                { id: "B", text: "내부 인력(Human)과 사용자 정의 프롬프트 데이터 세트를 사용하여 모델을 평가합니다." },
+                { id: "B", text: "내부 인력과 사용자 정의 프롬프트 데이터 세트를 사용하여 모델을 평가합니다." },
                 { id: "C", text: "공개 모델 리더보드를 사용하여 모델을 식별하세요." },
                 { id: "D", text: "모델을 시도할 때 Amazon CloudWatch에서 모델 InvocationLatency 런타임 메트릭을 사용하세요." }
             ],
@@ -5447,18 +5447,18 @@
             question: "한 회사가 최신 데이터를 활용하여 기초 모델(FM)의 관련성을 유지하고자 합니다. 회사는 FM을 정기적으로 업데이트하는 모델 학습 전략을 구현하고자 합니다. 어떤 솔루션이 이러한 요구 사항을 충족합니까?",
             options: [
                 { id: "A", text: "배치 학습 (Batch learning)" },
-                { id: "B", text: "지속적인 사전 훈련" },
-                { id: "C", text: "정적 트레이닝" },
+                { id: "B", text: "지속적인 사전 훈련 (Continued Pre-training)" },
+                { id: "C", text: "정적 트레이닝 (Static training)" },
                 { id: "D", text: "잠재 훈련" }
             ],
-            answer: "A",
-            explanation: "일정 기간 동안 누적된 새로운 최신 데이터 세트를 한꺼번에 모아 모델을 주기적(정기적)으로 다시 훈련시켜 최신 트렌드와 패턴을 반영하도록 하는 전통적이고 안정적인 모델 업데이트 전략을 일괄(Batch) 학습이라고 합니다."
+            answer: "B",
+            explanation: "- <b>지속적인 사전 훈련 (Continued Pre-training / Domain Adaptation)</b>: 이미 대규모로 1차 사전 훈련(Pre-training)이 끝난 파운데이션 모델에, 새로 수집된 최신 도메인 데이터(Unlabeled raw text)를 추가로 주입하여 언어 모델링(Next-token prediction)을 계속 진행하는 기법입니다. 이를 통해 모델의 기본 파라미터 지식을 지속적으로 업데이트하여 최신성을 유지할 수 있습니다.<br><br>- 배치 학습(Batch learning): 데이터를 일정한 묶음(Batch) 단위로 모아서 한 번에 학습시키는 일반적인 모델 학습 방식으로, 최신 데이터를 지속적으로 업데이트하는 전파 기법을 나타내는 전용 전략이 아닙니다.<br><br>- 정적 트레이닝(Static training): 한 번 수집된 고정된 데이터셋으로 학습을 완료한 후 더 이상 업데이트하지 않는 방식입니다. 최신 데이터를 반영해야 하는 문제 요구사항과 정반대입니다.<br><br>- 잠재 훈련(Latent training): 머신러닝/DL의 공식적인 표준 지속 학습(Continuous Learning) 전략 명칭이 아닙니다."
         },
         {
             id: 419,
             question: "한 회사가 Amazon Bedrock에서 감정 분석을 위해 대규모 언어 모델(LLM)을 사용하고자 합니다. 이 회사는 동일한 입력 프롬프트에 대해 더 일관되고 결정론적인 응답을 생성하기 위해 LLM이 필요합니다. 이러한 요구 사항을 충족하기 위해 회사는 추론 매개변수를 어떻게 조정해야 할까요?",
             options: [
-                { id: "A", text: "온도 (Temperature) 값을 감소시킵니다." },
+                { id: "A", text: "온도 값을 감소시킵니다." },
                 { id: "B", text: "온도 값을 증가시킵니다." },
                 { id: "C", text: "출력 토큰 길이를 줄입니다." },
                 { id: "D", text: "최대 생성 길이를 늘립니다." }
@@ -5473,7 +5473,7 @@
                 { id: "A", text: "프롬프트 엔지니어링과 제로샷 학습을 활용하세요." },
                 { id: "B", text: "프롬프트 템플릿을 사용하여 프롬프트 엔지니어링을 사용합니다." },
                 { id: "C", text: "지속적인 사전 학습을 통해 모델을 사용자 지정합니다." },
-                { id: "D", text: "미세 조정 (Fine-tuning)을 통해 모델을 사용자 정의합니다." }
+                { id: "D", text: "미세 조정을 통해 모델을 사용자 정의합니다." }
             ],
             answer: "D",
             explanation: "초기의 퓨샷(Few-shot) 단계를 넘어, 이미 정답 라벨이 지정된 대규모 훈련 데이터 세트가 충분히 확보된 상태에서 복잡하고 다양한 범주로 분류 작업을 정확하게 확장하려면, 해당 데이터로 모델 자체의 가중치를 업데이트하는 '미세 조정(Fine-tuning)'을 수행하는 것이 가장 효과적입니다."
@@ -5485,7 +5485,7 @@
                 { id: "A", text: "시각, 오디오 및 텍스트 입력을 처리하기 위해 기초 모델(FM)을 호출합니다." },
                 { id: "B", text: "촉진 전략을 통해 기초 모델(FM)을 강화합니다." },
                 { id: "C", text: "사용자에게 외부 데이터 소스 및 API 쿼리에 대한 전체 제어권을 제공합니다." },
-                { id: "D", text: "사용자 입력을 평가하고 여러 작업에 대한 외부 API 호출 등 작업을 자율적으로 조율(Orchestrate)합니다." }
+                { id: "D", text: "사용자 입력을 평가하고 여러 작업에 대한 외부 API 호출 등 작업을 자율적으로 조율합니다." }
             ],
             answer: "D",
             explanation: "Amazon Bedrock 에이전트는 사용자의 지시를 기반으로 파운데이션 모델의 추론 능력을 활용하여 필요한 일련의 작업 단계를 스스로 계획하고, 외부 시스템의 API를 자율적으로 호출하여 복잡한 비즈니스 워크플로를 오케스트레이션(조율)하는 지능형 시스템입니다."
@@ -5518,7 +5518,7 @@
             id: 424,
             question: "F1 점수는 기초 모델(FM) 성과의 맥락에서 무엇을 측정합니까?",
             options: [
-                { id: "A", text: "모델 정확도(Precision)와 재현율(Recall) 간의 균형" },
+                { id: "A", text: "모델 정확도와 재현율 간의 균형" },
                 { id: "B", text: "응답을 생성하는 모델 속도" },
                 { id: "C", text: "모델 운영에 드는 재정적 비용" },
                 { id: "D", text: "모델 계산의 에너지 효율성" }
@@ -5530,11 +5530,11 @@
             id: 425,
             question: "회사는 Amazon Bedrock API에 대한 모든 요청을 기록해야 합니다. 회사는 로그를 최소 비용으로 5년 동안 안전하게 보관해야 합니다. 이러한 요구 사항을 충족하는 AWS 서비스와 스토리지 클래스의 어떤 조합이 있습니까? (2개 선택)",
             options: [
-                { id: "A", text: "AWS 클라우드 트레일 (CloudTrail)" },
+                { id: "A", text: "AWS CloudTrail" },
                 { id: "B", text: "Amazon CloudWatch" },
-                { id: "C", text: "AWS 감사 관리자" },
-                { id: "D", text: "Amazon S3 지능형 계층화 (Intelligent-Tiering)" },
-                { id: "E", text: "Amazon S3 표준 (Standard)" }
+                { id: "C", text: "AWS Audit Manager" },
+                { id: "D", text: "Amazon S3 Intelligent-Tiering" },
+                { id: "E", text: "Amazon S3 Standard" }
             ],
             answer: ["A", "D"],
             explanation: "Amazon Bedrock을 포함한 모든 AWS 서비스에 대한 API 호출 기록을 빠짐없이 캡처하고 추적하는 데는 AWS CloudTrail(A)을 사용합니다. 생성된 대량의 감사 로그를 5년이라는 장기간 동안 가장 저렴하고 최적화된 비용으로 보관하려면 액세스 패턴에 따라 스토리지 계층을 자동 전환해 비용을 절감하는 Amazon S3 Intelligent-Tiering(D) 스토리지 클래스가 정답입니다."
